@@ -25,17 +25,17 @@ services:
       - "80:80"
   app:
     build:
-      #context: ./docker/app/golang
+      context: ./docker/app/golang
       #context: ./docker/app/nodejs
       #context: ./docker/app/perl
-      context: ./docker/app/python
+      # context: ./docker/app/python
       #context: ./docker/app/ruby
       args:
         GIT_URL: https://github.com/isucon/isucon7-qualify.git
-    #image: isucon7-qualifier-app:golang
+    image: isucon7-qualifier-app:golang
     #image: isucon7-qualifier-app:nodejs
     #image: isucon7-qualifier-app:perl
-    image: isucon7-qualifier-app:python
+    # image: isucon7 -qualifier-app:python
     #image: isucon7-qualifier-app:ruby
     networks:
       - backend
@@ -60,9 +60,9 @@ services:
     command: ["--character-set-server=utf8mb4"]
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      #MYSQL_DATABASE: isubata
-      #MYSQL_USER: isucon
-      #MYSQL_PASSWORD: isucon
+      # MYSQL_DATABASE: isubata
+      # MYSQL_USER: isucon
+      # MYSQL_PASSWORD: isucon
 networks:
   frontend:
   backend:

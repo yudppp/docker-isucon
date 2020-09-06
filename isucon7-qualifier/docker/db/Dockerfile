@@ -10,6 +10,8 @@ RUN \
   make && \
   bin/gen-initial-dataset
 
+COPY ./src/db /home/isucon/isubata/db/
+
 FROM mysql:5.7
 
 ENV MYSQL_ALLOW_EMPTY_PASSWORD=yes MYSQL_DATABASE=isubata MYSQL_USER=isucon MYSQL_PASSWORD=isucon
