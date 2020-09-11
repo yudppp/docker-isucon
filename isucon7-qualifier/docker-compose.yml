@@ -41,6 +41,8 @@ services:
       - backend
     depends_on:
        - db
+    volumes:
+      - ./docker/app/golang/src/webapp/go:/home/isucon/isubata/webapp/go
     ports:
       - "5000"
     environment:
